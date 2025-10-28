@@ -1,0 +1,35 @@
+#root {
+  margin: 0;
+  padding: 0;
+}
+
+@keyframes slide {
+  0% {
+    transform: translateX(0%);
+  }
+  100% {
+    transform: translateX(-100%);
+  }
+}
+
+.animate-slide {
+  animation: slide 30s linear infinite;
+}
+
+/* Primary button utility used across the app */
+.btn-primary {
+  background-color: #2563eb; /* bg-blue-600 */
+  color: #ffffff;
+  padding: 0.5rem 1.5rem; /* px-6 py-3 */
+  border-radius: 0.375rem; /* rounded-md */
+  font-weight: 500;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  border: 0;
+  cursor: pointer;
+}
+.btn-primary:hover {
+  background-color: #1e40af; /* bg-blue-700 */
+}
