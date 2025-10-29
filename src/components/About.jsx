@@ -60,7 +60,7 @@ function About() {
             </div>
 
             {/* Floating image */}
-            <div className="absolute -bottom-8 -left-8 z-20 w-48 h-48 rounded-xl overflow-hidden shadow-2xl border-4 border-white">
+            <div className="absolute -bottom-8 -left-2 lg:-left-8 z-20 w-32 h-32 lg:w-48 lg:h-48 rounded-xl overflow-hidden shadow-2xl border-4 border-white">
               <img 
                 src={aboutImage2} 
                 alt="Office environment" 

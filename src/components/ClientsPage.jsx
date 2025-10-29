@@ -3,7 +3,7 @@ import aboutImage1 from '../assets/aboutus1.jpg';
 
 export default function ClientsPage() {
   return (
-    <div className="pt-20 bg-white">
+    <div className="bg-white">
       <section className="relative min-h-[500px] overflow-hidden">
         <div className="absolute inset-0">
           <img 

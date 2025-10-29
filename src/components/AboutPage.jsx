@@ -10,7 +10,7 @@ function AboutPage() {
   }, []);
 
   return (
-    <div className="pt-20 bg-white">
+    <div className="bg-white">
       {/* Hero Section */}
       <section className="relative min-h-[500px] overflow-hidden">
         <div className="absolute inset-0">
@@ -102,7 +102,7 @@ function AboutPage() {
         </section>
 
         {/* Objectives with Modern Design */}
-        <section className="mb-20 bg-gradient-pattern relative overflow-hidden rounded-2xl">
+        <section className="mb-0 bg-gradient-pattern relative overflow-hidden rounded-2xl">
           <div className="absolute inset-0 bg-linear-to-r from-slate-900/95 to-blue-900/95"></div>
           <div className="relative px-4 sm:px-6 lg:px-8 py-16">
             <h2 className="text-3xl font-bold text-white mb-12 text-center">Our Objectives</h2>

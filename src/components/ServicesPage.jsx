@@ -8,7 +8,7 @@ export default function ServicesPage() {
   useEffect(() => { window.scrollTo(0,0); }, []);
 
   return (
-    <div className="pt-20 bg-white min-h-screen">
+    <div className="bg-white min-h-screen">
       <section className="relative min-h-[500px] overflow-hidden">
         <div className="absolute inset-0">
           <img 

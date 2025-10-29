@@ -20,7 +20,7 @@ function Header() {
   return (
     <header className="w-full bg-white shadow-md border-b border-gray-100 relative">
       <div className="flex items-center justify-between pl-4 sm:pl-6 lg:pl-8 pr-2 sm:pr-4 lg:pr-8 py-4 max-w-7xl mx-auto">
-      <div className="flex-shrink-0">
+      <div className="shrink-0">
         <Link to="/">
           <img src="/gladtechlogo.jpeg" alt="Logo" className="h-10 cursor-pointer" />
         </Link>
@@ -61,15 +61,15 @@ function Header() {
   <li><a href="/#contact" className="no-underline text-gray-800 font-medium hover:text-blue-600 transition-colors">Contact</a></li>
       </ul>
       
-      <div className="flex items-center gap-2">
-        <button className="hidden sm:flex btn-primary items-center gap-1 px-3 py-2 rounded-md whitespace-nowrap text-sm">
+      <div className="flex items-center">
+        <button className="hidden! xl:flex! btn-primary items-center gap-1 px-3 py-2 rounded-md whitespace-nowrap text-sm mr-4">
           <BiCalendar size={16} />
           Book Consultation
         </button>
         
         <button 
           onClick={() => setShowMobileMenu(!showMobileMenu)}
-          className="lg:hidden p-1 rounded-lg hover:bg-gray-100 transition-colors flex-shrink-0 ml-2"
+          className="lg:hidden p-1 rounded-lg hover:bg-gray-100 transition-colors"
         >
           {showMobileMenu ? <BiX size={32} /> : <BiMenu size={32} />}
         </button>
@@ -78,7 +78,7 @@ function Header() {
       
       {/* Mobile Menu */}
       {showMobileMenu && (
-        <div className="lg:hidden fixed top-[80px] left-0 right-0 bg-white border-t border-gray-200 shadow-lg z-50">
+        <div className="lg:hidden fixed top-20 left-0 right-0 bg-white border-t border-gray-200 shadow-lg z-50">
           <div className="px-4 py-6 space-y-4">
             <a href="/#home" className="block text-gray-800 font-medium hover:text-blue-600 transition-colors py-2" onClick={() => setShowMobileMenu(false)}>Home</a>
             <a href="/#about" className="block text-gray-800 font-medium hover:text-blue-600 transition-colors py-2" onClick={() => setShowMobileMenu(false)}>About</a>

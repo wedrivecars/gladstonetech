@@ -1,4 +1,6 @@
 import { BiPhone, BiEnvelope, BiMap, BiTime } from 'react-icons/bi';
+import { Formik, Form, Field, ErrorMessage } from 'formik';
+import * as Yup from 'yup';
 
 function Contact() {
   return (
@@ -86,87 +88,148 @@ function Contact() {
 
           {/* Contact Form */}
           <div className="lg:col-span-2">
-            <form className="bg-white p-8 rounded-2xl shadow-lg">
-              <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-6">
-                <div>
-                  <label htmlFor="firstName" className="block text-sm font-medium text-slate-700 mb-1">
-                    First Name
-                  </label>
-                  <input
-                    type="text"
-                    id="firstName"
-                    name="firstName"
-                    className="w-full px-4 py-2 border border-slate-300 rounded-lg focus:ring-2 focus:ring-purple-500 focus:border-transparent outline-none transition-all"
-                    placeholder="John"
-                  />
-                </div>
-                <div>
-                  <label htmlFor="lastName" className="block text-sm font-medium text-slate-700 mb-1">
-                    Last Name
-                  </label>
-                  <input
-                    type="text"
-                    id="lastName"
-                    name="lastName"
-                    className="w-full px-4 py-2 border border-slate-300 rounded-lg focus:ring-2 focus:ring-purple-500 focus:border-transparent outline-none transition-all"
-                    placeholder="Doe"
-                  />
-                </div>
-              </div>
+            <Formik
+              initialValues={{
+                firstName: '',
+                lastName: '',
+                email: '',
+                subject: '',
+                message: ''
+              }}
+              validationSchema={Yup.object({
+                firstName: Yup.string().required('First name is required'),
+                lastName: Yup.string().required('Last name is required'),
+                email: Yup.string().email('Invalid email address').required('Email is required'),
+                subject: Yup.string().required('Subject is required'),
+                message: Yup.string().required('Message is required')
+              })}
+              onSubmit={async (values, { setSubmitting, resetForm, setStatus }) => {
+                try {
+                  const response = await fetch('https://formsubmit.co/info@gladstonetech.com', {
+                    method: 'POST',
+                    headers: {
+                      'Content-Type': 'application/json',
+                    },
+                    body: JSON.stringify({
+                      name: `${values.firstName} ${values.lastName}`,
+                      email: values.email,
+                      subject: values.subject,
+                      message: values.message,
+                      _subject: `New Contact Form Submission: ${values.subject}`,
+                      _captcha: false
+                    })
+                  });
+                  
+                  if (response.ok) {
+                    setStatus({ type: 'success', message: 'Message sent successfully!' });
+                    resetForm();
+                  } else {
+                    setStatus({ type: 'error', message: 'Failed to send message. Please try again.' });
+                  }
+                } catch (error) {
+                  setStatus({ type: 'error', message: 'Failed to send message. Please try again.' });
+                }
+                setSubmitting(false);
+              }}
+            >
+              {({ isSubmitting, status }) => (
+                <Form className="bg-white p-8 rounded-2xl shadow-lg">
+                  {status && (
+                    <div className={`mb-6 p-4 rounded-lg ${
+                      status.type === 'success' ? 'bg-green-100 text-green-700' : 'bg-red-100 text-red-700'
+                    }`}>
+                      {status.message}
+                    </div>
+                  )}
+                  
+                  <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-6">
+                    <div>
+                      <label htmlFor="firstName" className="block text-sm font-medium text-slate-700 mb-1">
+                        First Name
+                      </label>
+                      <Field
+                        type="text"
+                        id="firstName"
+                        name="firstName"
+                        className="w-full px-4 py-2 border border-slate-300 rounded-lg focus:ring-2 focus:ring-purple-500 focus:border-transparent outline-none transition-all"
+                        placeholder="John"
+                      />
+                      <ErrorMessage name="firstName" component="div" className="text-red-500 text-sm mt-1" />
+                    </div>
+                    <div>
+                      <label htmlFor="lastName" className="block text-sm font-medium text-slate-700 mb-1">
+                        Last Name
+                      </label>
+                      <Field
+                        type="text"
+                        id="lastName"
+                        name="lastName"
+                        className="w-full px-4 py-2 border border-slate-300 rounded-lg focus:ring-2 focus:ring-purple-500 focus:border-transparent outline-none transition-all"
+                        placeholder="Doe"
+                      />
+                      <ErrorMessage name="lastName" component="div" className="text-red-500 text-sm mt-1" />
+                    </div>
+                  </div>
 
-              <div className="mb-6">
-                <label htmlFor="email" className="block text-sm font-medium text-slate-700 mb-1">
-                  Email Address
-                </label>
-                <input
-                  type="email"
-                  id="email"
-                  name="email"
-                  className="w-full px-4 py-2 border border-slate-300 rounded-lg focus:ring-2 focus:ring-purple-500 focus:border-transparent outline-none transition-all"
-                  placeholder="john@example.com"
-                />
-              </div>
+                  <div className="mb-6">
+                    <label htmlFor="email" className="block text-sm font-medium text-slate-700 mb-1">
+                      Email Address
+                    </label>
+                    <Field
+                      type="email"
+                      id="email"
+                      name="email"
+                      className="w-full px-4 py-2 border border-slate-300 rounded-lg focus:ring-2 focus:ring-purple-500 focus:border-transparent outline-none transition-all"
+                      placeholder="john@example.com"
+                    />
+                    <ErrorMessage name="email" component="div" className="text-red-500 text-sm mt-1" />
+                  </div>
 
-              <div className="mb-6">
-                <label htmlFor="subject" className="block text-sm font-medium text-slate-700 mb-1">
-                  Subject
-                </label>
-                <input
-                  type="text"
-                  id="subject"
-                  name="subject"
-                  className="w-full px-4 py-2 border border-slate-300 rounded-lg focus:ring-2 focus:ring-purple-500 focus:border-transparent outline-none transition-all"
-                  placeholder="How can we help?"
-                />
-              </div>
+                  <div className="mb-6">
+                    <label htmlFor="subject" className="block text-sm font-medium text-slate-700 mb-1">
+                      Subject
+                    </label>
+                    <Field
+                      type="text"
+                      id="subject"
+                      name="subject"
+                      className="w-full px-4 py-2 border border-slate-300 rounded-lg focus:ring-2 focus:ring-purple-500 focus:border-transparent outline-none transition-all"
+                      placeholder="How can we help?"
+                    />
+                    <ErrorMessage name="subject" component="div" className="text-red-500 text-sm mt-1" />
+                  </div>
 
-              <div className="mb-6">
-                <label htmlFor="message" className="block text-sm font-medium text-slate-700 mb-1">
-                  Message
-                </label>
-                <textarea
-                  id="message"
-                  name="message"
-                  rows="4"
-                  className="w-full px-4 py-2 border border-slate-300 rounded-lg focus:ring-2 focus:ring-purple-500 focus:border-transparent outline-none transition-all resize-none"
-                  placeholder="Tell us about your project..."
-                ></textarea>
-              </div>
+                  <div className="mb-6">
+                    <label htmlFor="message" className="block text-sm font-medium text-slate-700 mb-1">
+                      Message
+                    </label>
+                    <Field
+                      as="textarea"
+                      id="message"
+                      name="message"
+                      rows="4"
+                      className="w-full px-4 py-2 border border-slate-300 rounded-lg focus:ring-2 focus:ring-purple-500 focus:border-transparent outline-none transition-all resize-none"
+                      placeholder="Tell us about your project..."
+                    />
+                    <ErrorMessage name="message" component="div" className="text-red-500 text-sm mt-1" />
+                  </div>
 
-              <button
-                type="submit"
-                className="btn-primary"
-                style={{ width: '100%', borderRadius: '0.5rem', padding: '0.75rem 1.5rem' }}
-              >
-                Send Message
-              </button>
-            </form>
+                  <button
+                    type="submit"
+                    disabled={isSubmitting}
+                    className="btn-primary w-full rounded-lg py-3 px-6 disabled:opacity-50 disabled:cursor-not-allowed"
+                  >
+                    {isSubmitting ? 'Sending...' : 'Send Message'}
+                  </button>
+                </Form>
+              )}
+            </Formik>
           </div>
         </div>
       </div>
       
       {/* Map Section - Full Width */}
-      <div className="w-full h-[500px] relative">
+      <div className="w-full h-[500px] relative -mb-20">
         <iframe
           src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3963.355220527223!2d3.3614122744809576!3d6.602703022238951!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x103b9249336ddb1f%3A0x90e1e873d78fc7d5!2s8%20Sanyaolu%20Street%2C%20Oregun%2C%20Ikeja%20101233%2C%20Lagos!5e0!3m2!1sen!2sng!4v1761140553255!5m2!1sen!2sng"
           width="100%"
