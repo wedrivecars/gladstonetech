@@ -29,13 +29,15 @@ function Hero() {
             </p>
             
             <div className="flex items-center gap-4 relative z-20">
-              <button 
-                className="bg-blue-600 hover:bg-blue-700 text-white px-8 py-3 rounded-full font-medium flex items-center gap-2 cursor-pointer transition-all hover:scale-105 relative z-30"
-                onClick={() => console.log('Button clicked!')}
+              <a 
+                href="https://wa.me/2348033004581?text=Hello%2C%20I%20would%20like%20to%20book%20a%20consultation%20with%20Gladstone%20Technologies"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="bg-blue-600 hover:bg-blue-700 text-white px-8 py-3 rounded-full font-medium flex items-center gap-2 cursor-pointer transition-all hover:scale-105 relative z-30 no-underline"
               >
                 <BiCalendar className="text-xl" />
                 Book Consultation
-              </button>
+              </a>
             </div>
           </div>
 

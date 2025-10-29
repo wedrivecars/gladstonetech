@@ -62,10 +62,15 @@ function Header() {
       </ul>
       
       <div className="flex items-center">
-        <button className="hidden! xl:flex! btn-primary items-center gap-1 px-3 py-2 rounded-md whitespace-nowrap text-sm mr-4">
+        <a 
+          href="https://wa.me/2348033004581?text=Hello%2C%20I%20would%20like%20to%20book%20a%20consultation%20with%20Gladstone%20Technologies"
+          target="_blank"
+          rel="noopener noreferrer"
+          className="!hidden xl:!flex btn-primary items-center gap-1 px-3 py-2 rounded-md whitespace-nowrap text-sm mr-4 no-underline"
+        >
           <BiCalendar size={16} />
           Book Consultation
-        </button>
+        </a>
         
         <button 
           onClick={() => setShowMobileMenu(!showMobileMenu)}
@@ -88,10 +93,16 @@ function Header() {
             <Link to="/clients" className="block text-gray-800 font-medium hover:text-blue-600 transition-colors py-2" onClick={() => setShowMobileMenu(false)}>All Clients</Link>
             <Link to="/contracts" className="block text-gray-800 font-medium hover:text-blue-600 transition-colors py-2" onClick={() => setShowMobileMenu(false)}>Contracts Profile</Link>
             <a href="/#contact" className="block text-gray-800 font-medium hover:text-blue-600 transition-colors py-2" onClick={() => setShowMobileMenu(false)}>Contact</a>
-            <button className="w-full btn-primary flex items-center justify-center gap-2 px-4 py-3 rounded-md mt-4">
+            <a 
+              href="https://wa.me/2348033004581?text=Hello%2C%20I%20would%20like%20to%20book%20a%20consultation%20with%20Gladstone%20Technologies"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="w-full btn-primary flex items-center justify-center gap-2 px-4 py-3 rounded-md mt-4 no-underline"
+              onClick={() => setShowMobileMenu(false)}
+            >
               <BiCalendar size={20} />
               Book Consultation
-            </button>
+            </a>
           </div>
         </div>
       )}
