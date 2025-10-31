@@ -12,6 +12,7 @@ import partner3 from '../assets/partner3.jpeg';
 import partner4 from '../assets/partner4.jpeg';
 import partner5 from '../assets/partner5.jpeg';
 import partner6 from '../assets/partner6.jpeg';
+import partner7 from '../assets/partner7.jpeg';
 import emc from '../assets/emc.jpeg';
 import hpbusiness from '../assets/hpbusiness.jpeg';
 import lenovo from '../assets/lenovo.jpeg';
@@ -33,6 +34,7 @@ function Partners() {
     { id: 11, name: 'Partner 4', logo: partner4 },
     { id: 12, name: 'Partner 5', logo: partner5 },
     { id: 13, name: 'Partner 6', logo: partner6 },
+    { id: 13, name: 'Partner 7', logo: partner7 },
     { id: 14, name: 'EMC', logo: emc },
     { id: 15, name: 'HP Business', logo: hpbusiness },
     { id: 16, name: 'Lenovo', logo: lenovo },
