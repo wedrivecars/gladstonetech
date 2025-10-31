@@ -22,7 +22,7 @@ function Header() {
       <div className="flex items-center justify-between pl-4 sm:pl-6 lg:pl-8 pr-2 sm:pr-4 lg:pr-8 py-4 max-w-7xl mx-auto">
       <div className="shrink-0">
         <Link to="/">
-          <img src="/gladtechlogo.jpeg" alt="Logo" className="h-10 cursor-pointer" />
+          <img src="/gladtechlogo.jpeg" alt="Logo" width={230} className="h-10 cursor-pointer" />
         </Link>
       </div>
       
@@ -66,7 +66,7 @@ function Header() {
           href="https://wa.me/2348033004581?text=Hello%2C%20I%20would%20like%20to%20book%20a%20consultation%20with%20Gladstone%20Technologies"
           target="_blank"
           rel="noopener noreferrer"
-          className="!hidden xl:!flex btn-primary items-center gap-1 px-3 py-2 rounded-md whitespace-nowrap text-sm mr-4 no-underline"
+          className="hidden! xl:flex! btn-primary items-center gap-1 px-3 py-2 rounded-md whitespace-nowrap text-sm mr-4 no-underline"
         >
           <BiCalendar size={16} />
           Book Consultation

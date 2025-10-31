@@ -20,7 +20,9 @@ function About() {
             </div>
 
             <p className="text-lg text-slate-600 leading-relaxed">
-              At Gladstone Tech, we're more than just IT consultants – we're your partners in digital transformation. With over a decade of experience, we've helped hundreds of businesses harness the power of cloud technology to drive growth and innovation.
+              At Gladstone Technologies Limited, we go beyond being Information Technology consultants — we serve as your strategic partners in digital transformation. 
+              With over a decade of proven experience, we have empowered organizations of all sizes to leverage cloud technology, automation, and intelligent 
+              digital solutions to drive growth, enhance efficiency, and foster innovation.
             </p>
 
             <div className="grid grid-cols-2 gap-4 sm:gap-8">

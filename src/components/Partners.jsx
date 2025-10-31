@@ -2,12 +2,16 @@ import { Link } from 'react-router-dom';
 import cisco from '../assets/oracle.jpeg';
 import corel from '../assets/adobe.jpeg';
 import dell from '../assets/cisco.jpeg';
-import hp from '../assets/autocad.jpeg';
+import hp from '../assets/partner1.jpeg';
 import microsoft from '../assets/cyberoam.jpeg';
 import symantec from '../assets/softexpert.jpeg';
 import whatsup from '../assets/sam.jpeg';
 import mime from '../assets/mime.jpeg';
-import ipswitch from '../assets/ipswitch.jpeg';
+import ipswitch from '../assets/partner2.jpeg';
+import partner3 from '../assets/partner3.jpeg';
+import partner4 from '../assets/partner4.jpeg';
+import partner5 from '../assets/partner5.jpeg';
+import partner6 from '../assets/partner6.jpeg';
 import emc from '../assets/emc.jpeg';
 import hpbusiness from '../assets/hpbusiness.jpeg';
 import lenovo from '../assets/lenovo.jpeg';
@@ -25,10 +29,14 @@ function Partners() {
     { id: 7, name: 'SAM', logo: whatsup },
     { id: 8, name: 'MIME', logo: mime },
     { id: 9, name: 'Ipswitch', logo: ipswitch },
-    { id: 10, name: 'EMC', logo: emc },
-    { id: 11, name: 'HP Business', logo: hpbusiness },
-    { id: 12, name: 'Lenovo', logo: lenovo },
-    { id: 13, name: 'Office 365', logo: office365 },
+    { id: 10, name: 'Partner 3', logo: partner3 },
+    { id: 11, name: 'Partner 4', logo: partner4 },
+    { id: 12, name: 'Partner 5', logo: partner5 },
+    { id: 13, name: 'Partner 6', logo: partner6 },
+    { id: 14, name: 'EMC', logo: emc },
+    { id: 15, name: 'HP Business', logo: hpbusiness },
+    { id: 16, name: 'Lenovo', logo: lenovo },
+    { id: 17, name: 'Office 365', logo: office365 },
   ];
 
   return (
@@ -55,7 +63,7 @@ function Partners() {
           <div className="overflow-hidden">
             <div className="flex animate-slide">
               {/* First set of logos */}
-              <div className="flex gap-8 items-center py-8" style={{minWidth: 'calc(13 * 200px)'}}>
+              <div className="flex gap-8 items-center py-8" style={{minWidth: 'calc(17 * 200px)'}}>
                 {partners.map((partner) => (
                   <img
                     key={partner.id}
@@ -66,7 +74,7 @@ function Partners() {
                 ))}
               </div>
               {/* Duplicated set for seamless loop */}
-              <div className="flex gap-8 items-center py-8" style={{minWidth: 'calc(13 * 200px)'}}>
+              <div className="flex gap-8 items-center py-8" style={{minWidth: 'calc(17 * 200px)'}}>
                 {partners.map((partner) => (
                   <img
                     key={`dup-${partner.id}`}
