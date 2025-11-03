@@ -281,9 +281,27 @@ export default function ServicesPage() {
                 </span>
               </div>
               <div className="space-y-3">
-                <div className="border-b border-blue-100 pb-3">
-                  <h3 className="font-bold text-gray-900">Cisco</h3>
-                  <p className="text-sm text-gray-600">Network Solutions Provider</p>
+                <div className="grid grid-cols-2 gap-2 text-sm text-gray-900">
+                  <div className="flex items-center space-x-2">
+                    <div className="w-1.5 h-1.5 bg-blue-400 rounded-full"></div>
+                    <span className="font-bold">Cisco</span>
+                  </div>
+                  <div className="flex items-center space-x-2">
+                    <div className="w-1.5 h-1.5 bg-blue-400 rounded-full"></div>
+                    <span className="font-bold">Progress</span>
+                  </div>
+                  <div className="flex items-center space-x-2">
+                    <div className="w-1.5 h-1.5 bg-blue-400 rounded-full"></div>
+                    <span className="font-bold">Autodesk</span>
+                  </div>
+                  <div className="flex items-center space-x-2">
+                    <div className="w-1.5 h-1.5 bg-blue-400 rounded-full"></div>
+                    <span className="font-bold">Acronis</span>
+                  </div>
+                  <div className="flex items-center space-x-2">
+                    <div className="w-1.5 h-1.5 bg-blue-400 rounded-full"></div>
+                    <span className="font-bold">Sophos</span>
+                  </div>
                 </div>
               </div>
             </div>
@@ -315,7 +333,11 @@ export default function ServicesPage() {
                   </div>
                   <div className="flex items-center space-x-2">
                     <div className="w-1.5 h-1.5 bg-green-400 rounded-full"></div>
-                    <span>WhatsUpGold</span>
+                    <span>Progress</span>
+                  </div>
+                  <div className="flex items-center space-x-2">
+                    <div className="w-1.5 h-1.5 bg-green-400 rounded-full"></div>
+                    <span>Lenovo</span>
                   </div>
                 </div>
               </div>
