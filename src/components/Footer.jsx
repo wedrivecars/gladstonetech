@@ -28,7 +28,7 @@ function Footer() {
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12">
           {/* Company Info */}
           <div className="space-y-6">
-            <img src="/gladtechlogo.jpeg" alt="Gladstone Tech Logo" width={230} className="h-10" />
+            <img src="/gladtechlogo.jpeg" alt="Gladstone Tech Logo" className="h-16 w-auto" />
             <p className="text-slate-400 leading-relaxed">
               Empowering businesses through innovative cloud solutions and digital transformation.
             </p>

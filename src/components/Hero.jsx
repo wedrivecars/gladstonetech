@@ -30,9 +30,7 @@ function Hero() {
             
             <div className="flex items-center gap-4 relative z-20">
               <a 
-                href="https://wa.me/2348033004581?text=Hello%2C%20I%20would%20like%20to%20book%20a%20consultation%20with%20Gladstone%20Technologies"
-                target="_blank"
-                rel="noopener noreferrer"
+                href="/#contact"
                 className="bg-blue-600 hover:bg-blue-700 text-white px-8 py-3 rounded-full font-medium flex items-center gap-2 cursor-pointer transition-all hover:scale-105 relative z-30 no-underline"
               >
                 <BiCalendar className="text-xl" />

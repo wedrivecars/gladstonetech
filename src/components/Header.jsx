@@ -22,7 +22,7 @@ function Header() {
       <div className="flex items-center justify-between pl-4 sm:pl-6 lg:pl-8 pr-2 sm:pr-4 lg:pr-8 py-4 max-w-7xl mx-auto">
       <div className="shrink-0">
         <Link to="/">
-          <img src="/gladtechlogo.jpeg" alt="Logo" width={230} className="h-10 cursor-pointer" />
+          <img src="/gladtechlogo.jpeg" alt="Logo" className="h-24 w-auto cursor-pointer" />
         </Link>
       </div>
       
@@ -63,9 +63,7 @@ function Header() {
       
       <div className="flex items-center">
         <a 
-          href="https://wa.me/2348033004581?text=Hello%2C%20I%20would%20like%20to%20book%20a%20consultation%20with%20Gladstone%20Technologies"
-          target="_blank"
-          rel="noopener noreferrer"
+          href="/#contact"
           className="hidden! xl:flex! btn-primary items-center gap-1 px-3 py-2 rounded-md whitespace-nowrap text-sm mr-4 no-underline"
         >
           <BiCalendar size={16} />
@@ -94,9 +92,7 @@ function Header() {
             <Link to="/contracts" className="block text-gray-800 font-medium hover:text-blue-600 transition-colors py-2" onClick={() => setShowMobileMenu(false)}>Contracts Profile</Link>
             <a href="/#contact" className="block text-gray-800 font-medium hover:text-blue-600 transition-colors py-2" onClick={() => setShowMobileMenu(false)}>Contact</a>
             <a 
-              href="https://wa.me/2348033004581?text=Hello%2C%20I%20would%20like%20to%20book%20a%20consultation%20with%20Gladstone%20Technologies"
-              target="_blank"
-              rel="noopener noreferrer"
+              href="/#contact"
               className="w-full btn-primary flex items-center justify-center gap-2 px-4 py-3 rounded-md mt-4 no-underline"
               onClick={() => setShowMobileMenu(false)}
             >
