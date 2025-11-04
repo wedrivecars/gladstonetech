@@ -91,11 +91,11 @@ function Partners() {
         </div>
         
         {/* Learn More Link */}
-        <div className="text-center mt-2">
+        {/* <div className="text-center mt-2">
           <Link to="/clients" className="btn-primary inline-block">
             Learn More
           </Link>
-        </div>
+        </div> */}
       </div>
     </section>
   );

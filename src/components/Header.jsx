@@ -1,11 +1,43 @@
 import { BiCalendar, BiMenu, BiX } from 'react-icons/bi';
-import { Link } from 'react-router-dom';
+import { Link, useNavigate, useLocation } from 'react-router-dom';
 import { useState, useRef, useEffect } from 'react';
 
 function Header() {
   const [showDropdown, setShowDropdown] = useState(false);
   const [showMobileMenu, setShowMobileMenu] = useState(false);
   const dropdownRef = useRef(null);
+  const navigate = useNavigate();
+  const location = useLocation();
+
+  const handleSectionNavigation = (sectionId) => {
+    if (location.pathname !== '/') {
+      navigate(`/#${sectionId}`);
+      setTimeout(() => {
+        const element = document.getElementById(sectionId);
+        if (element) {
+          element.scrollIntoView({ behavior: 'smooth' });
+        }
+      }, 500);
+    } else {
+      const element = document.getElementById(sectionId);
+      if (element) {
+        element.scrollIntoView({ behavior: 'smooth' });
+      }
+    }
+  };
+
+  // Handle hash navigation on page load
+  useEffect(() => {
+    const hash = location.hash.replace('#', '');
+    if (hash && location.pathname === '/') {
+      setTimeout(() => {
+        const element = document.getElementById(hash);
+        if (element) {
+          element.scrollIntoView({ behavior: 'smooth' });
+        }
+      }, 300);
+    }
+  }, [location]);
 
   useEffect(() => {
     function handleClickOutside(event) {
@@ -27,11 +59,11 @@ function Header() {
       </div>
       
       <ul className="hidden lg:flex list-none m-0 p-0 gap-6 xl:gap-8">
-        <li><a href="/#home" className="no-underline text-gray-800 font-medium hover:text-blue-600 transition-colors">Home</a></li>
-        <li><a href="/#about" className="no-underline text-gray-800 font-medium hover:text-blue-600 transition-colors">About</a></li>
-        <li><a href="/#services" className="no-underline text-gray-800 font-medium hover:text-blue-600 transition-colors">Services</a></li>
+        <li><button onClick={() => handleSectionNavigation('home')} className="no-underline text-gray-800 font-medium hover:text-blue-600 transition-colors bg-transparent border-none cursor-pointer">Home</button></li>
+        <li><button onClick={() => handleSectionNavigation('about')} className="no-underline text-gray-800 font-medium hover:text-blue-600 transition-colors bg-transparent border-none cursor-pointer">About</button></li>
+        <li><button onClick={() => handleSectionNavigation('services')} className="no-underline text-gray-800 font-medium hover:text-blue-600 transition-colors bg-transparent border-none cursor-pointer">Services</button></li>
         <li><Link to="/team" className="no-underline text-gray-800 font-medium hover:text-blue-600 transition-colors">Team</Link></li>
-  <li><a href="/#partners" className="no-underline text-gray-800 font-medium hover:text-blue-600 transition-colors">Partners</a></li>
+  <li><button onClick={() => handleSectionNavigation('partners')} className="no-underline text-gray-800 font-medium hover:text-blue-600 transition-colors bg-transparent border-none cursor-pointer">Partners</button></li>
   <li className="relative" ref={dropdownRef}>
     <button 
       onClick={() => setShowDropdown(!showDropdown)}
@@ -58,17 +90,17 @@ function Header() {
       </div>
     )}
   </li>
-  <li><a href="/#contact" className="no-underline text-gray-800 font-medium hover:text-blue-600 transition-colors">Contact</a></li>
+  <li><button onClick={() => handleSectionNavigation('contact')} className="no-underline text-gray-800 font-medium hover:text-blue-600 transition-colors bg-transparent border-none cursor-pointer">Contact</button></li>
       </ul>
       
       <div className="flex items-center">
-        <a 
-          href="/#contact"
+        <button 
+          onClick={() => handleSectionNavigation('contact')}
           className="hidden! xl:flex! btn-primary items-center gap-1 px-3 py-2 rounded-md whitespace-nowrap text-sm mr-4 no-underline"
         >
           <BiCalendar size={16} />
           Book Consultation
-        </a>
+        </button>
         
         <button 
           onClick={() => setShowMobileMenu(!showMobileMenu)}
@@ -83,22 +115,21 @@ function Header() {
       {showMobileMenu && (
         <div className="lg:hidden fixed top-20 left-0 right-0 bg-white border-t border-gray-200 shadow-lg z-50">
           <div className="px-4 py-6 space-y-4">
-            <a href="/#home" className="block text-gray-800 font-medium hover:text-blue-600 transition-colors py-2" onClick={() => setShowMobileMenu(false)}>Home</a>
-            <a href="/#about" className="block text-gray-800 font-medium hover:text-blue-600 transition-colors py-2" onClick={() => setShowMobileMenu(false)}>About</a>
-            <a href="/#services" className="block text-gray-800 font-medium hover:text-blue-600 transition-colors py-2" onClick={() => setShowMobileMenu(false)}>Services</a>
+            <button onClick={() => { handleSectionNavigation('home'); setShowMobileMenu(false); }} className="block text-gray-800 font-medium hover:text-blue-600 transition-colors py-2 bg-transparent border-none cursor-pointer w-full text-left">Home</button>
+            <button onClick={() => { handleSectionNavigation('about'); setShowMobileMenu(false); }} className="block text-gray-800 font-medium hover:text-blue-600 transition-colors py-2 bg-transparent border-none cursor-pointer w-full text-left">About</button>
+            <button onClick={() => { handleSectionNavigation('services'); setShowMobileMenu(false); }} className="block text-gray-800 font-medium hover:text-blue-600 transition-colors py-2 bg-transparent border-none cursor-pointer w-full text-left">Services</button>
             <Link to="/team" className="block text-gray-800 font-medium hover:text-blue-600 transition-colors py-2" onClick={() => setShowMobileMenu(false)}>Team</Link>
-            <a href="/#partners" className="block text-gray-800 font-medium hover:text-blue-600 transition-colors py-2" onClick={() => setShowMobileMenu(false)}>Partners</a>
+            <button onClick={() => { handleSectionNavigation('partners'); setShowMobileMenu(false); }} className="block text-gray-800 font-medium hover:text-blue-600 transition-colors py-2 bg-transparent border-none cursor-pointer w-full text-left">Partners</button>
             <Link to="/clients" className="block text-gray-800 font-medium hover:text-blue-600 transition-colors py-2" onClick={() => setShowMobileMenu(false)}>All Clients</Link>
             <Link to="/contracts" className="block text-gray-800 font-medium hover:text-blue-600 transition-colors py-2" onClick={() => setShowMobileMenu(false)}>Contracts Profile</Link>
-            <a href="/#contact" className="block text-gray-800 font-medium hover:text-blue-600 transition-colors py-2" onClick={() => setShowMobileMenu(false)}>Contact</a>
-            <a 
-              href="/#contact"
+            <button onClick={() => { handleSectionNavigation('contact'); setShowMobileMenu(false); }} className="block text-gray-800 font-medium hover:text-blue-600 transition-colors py-2 bg-transparent border-none cursor-pointer w-full text-left">Contact</button>
+            <button 
+              onClick={() => { handleSectionNavigation('contact'); setShowMobileMenu(false); }}
               className="w-full btn-primary flex items-center justify-center gap-2 px-4 py-3 rounded-md mt-4 no-underline"
-              onClick={() => setShowMobileMenu(false)}
             >
               <BiCalendar size={20} />
               Book Consultation
-            </a>
+            </button>
           </div>
         </div>
       )}
