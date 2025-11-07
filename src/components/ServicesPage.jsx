@@ -3,6 +3,9 @@ import serverImage from '../assets/server.jpg';
 import cmsImage from '../assets/aboutus1.jpg';
 import policyImg from '../assets/policy.png';
 import webImg from '../assets/web.png';
+import cctvImage from '../assets/cctv.jpg';
+import SoftwareAsset from '../assets/softwareasset.jpg';
+
 
 export default function ServicesPage() {
   useEffect(() => { window.scrollTo(0,0); }, []);
@@ -182,7 +185,7 @@ export default function ServicesPage() {
             </ul>
           </div>
           <div>
-            <img src={cmsImage} alt="Software Asset Management" className="rounded-2xl shadow-lg w-full h-80 object-cover" />
+            <img src={SoftwareAsset} alt="Software Asset Management" className="rounded-2xl shadow-lg w-full h-80 object-cover" />
           </div>
         </section>
 
@@ -191,15 +194,34 @@ export default function ServicesPage() {
             <img src={serverImage} alt="Hardware Asset Management" className="rounded-2xl shadow-lg w-full h-80 object-cover" />
           </div>
           <div>
-            <h2 className="text-2xl font-bold mb-4">Hardware Asset Management & CCTV</h2>
+            <h2 className="text-2xl font-bold mb-4">Hardware Asset Management</h2>
             <p className="text-slate-600 leading-relaxed mb-4">
-              Inventory management of hardware assets from acquisition to retirement. We also provide CCTV installation and maintenance services using industry best practices.
+              Comprehensive inventory management of hardware assets from acquisition to retirement, ensuring optimal lifecycle management and cost efficiency.
             </p>
             <ul className="list-disc list-inside text-slate-600 space-y-2">
               <li>Inventory and lifecycle management</li>
               <li>Procurement of hardware and accessories</li>
-              <li>CCTV installation, transmission, and maintenance</li>
+              <li>Asset tracking and maintenance scheduling</li>
+              <li>Hardware refresh planning and budgeting</li>
             </ul>
+          </div>
+        </section>
+
+        <section className="grid lg:grid-cols-2 gap-8 lg:gap-12 items-center">
+          <div>
+            <h2 className="text-2xl font-bold mb-4">CCTV Installation & Maintenance</h2>
+            <p className="text-slate-600 leading-relaxed mb-4">
+              Professional CCTV installation and maintenance services using industry best practices to ensure comprehensive security coverage and reliable surveillance systems.
+            </p>
+            <ul className="list-disc list-inside text-slate-600 space-y-2">
+              <li>CCTV system design and installation</li>
+              <li>Video transmission and networking</li>
+              <li>Preventive maintenance and support</li>
+              <li>System monitoring and troubleshooting</li>
+            </ul>
+          </div>
+          <div>
+            <img src={cctvImage} alt="CCTV Installation" className="rounded-2xl shadow-lg w-full h-80 object-cover" />
           </div>
         </section>
 
@@ -222,13 +244,20 @@ export default function ServicesPage() {
 
         <section className="grid lg:grid-cols-2 gap-8 lg:gap-12 items-center">
           <div>
-            <img src={webImg} alt="Web solutions" className="rounded-2xl shadow-lg w-full h-80 object-contain bg-white p-8" />
+            <img src={webImg} alt="Internet & E-Business Solutions" className="rounded-2xl shadow-lg w-full h-80 object-contain bg-white p-8" />
           </div>
           <div>
-            <h2 className="text-2xl font-bold mb-4">Internet / Intranet / Extranet Web Solutions</h2>
+            <h2 className="text-2xl font-bold mb-4">Internet & E-Business Solutions</h2>
             <p className="text-slate-600 leading-relaxed mb-4">
-              We deliver web solutions that include content filtering, messaging, collaboration and workflow, with focus on security, privacy and compliance standards to support e-business.
+              Comprehensive web solutions including Internet, Intranet, Extranet development and e-business platforms. We deliver content filtering, messaging, collaboration and workflow solutions with focus on security, privacy and compliance standards.
             </p>
+            <ul className="list-disc list-inside text-slate-600 space-y-2">
+              <li>Internet and Intranet development</li>
+              <li>E-commerce and e-business platforms</li>
+              <li>Content filtering and security</li>
+              <li>Collaboration and workflow tools</li>
+              <li>Messaging and communication systems</li>
+            </ul>
           </div>
         </section>
 
@@ -306,11 +335,11 @@ export default function ServicesPage() {
               </div>
             </div>
 
-            {/* Value Added Partners */}
+            {/* Value Added Resellers */}
             <div className="bg-linear-to-br from-green-50 to-white p-6 rounded-xl border border-green-100 shadow-sm">
               <div className="mb-4">
                 <span className="inline-block px-3 py-1 bg-green-100 text-green-800 rounded-full text-sm font-medium">
-                  Value Added Partners
+                  Value Added Resellers
                 </span>
               </div>
               <div className="space-y-3">
@@ -333,7 +362,7 @@ export default function ServicesPage() {
                   </div>
                   <div className="flex items-center space-x-2">
                     <div className="w-1.5 h-1.5 bg-green-400 rounded-full"></div>
-                    <span>Progress</span>
+                    <span>Aveva</span>
                   </div>
                   <div className="flex items-center space-x-2">
                     <div className="w-1.5 h-1.5 bg-green-400 rounded-full"></div>

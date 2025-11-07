@@ -27,17 +27,17 @@ function Services() {
     },
     {
       id: 3,
+      title: "CCTV Installation & Maintenance",
+      description: "Professional CCTV installation, transmission, and maintenance services.",
+      icon: securityImage,
+      color: "from-red-500 to-red-700"
+    },
+    {
+      id: 4,
       title: "Policy & Documentation",
       description: "Consultancy for essential IT and governance documentation.",
       icon: policyImage,
       color: "from-indigo-500 to-indigo-700"
-    },
-    {
-      id: 4,
-      title: "Security Management",
-      description: "Deploy and support robust enterprise security solutions.",
-      icon: securityImage,
-      color: "from-cyan-500 to-cyan-700"
     },
     {
       id: 5,
@@ -48,8 +48,8 @@ function Services() {
     },
     {
       id: 6,
-      title: "Web Solutions",
-      description: "Internet, intranet, and extranet solutions for e-business.",
+      title: "Internet & E-Business Solutions",
+      description: "Internet, intranet, extranet and comprehensive e-business solutions.",
       icon: webImage,
       color: "from-sky-500 to-sky-700"
     }

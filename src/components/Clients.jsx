@@ -15,7 +15,11 @@ function Clients() {
         "First Exploration and Petroleum Nigeria",
         "Afren Nigeria",
         "MRS Oil Nigeria",
-        "Saipem"
+        "Saipem",
+        "Seplat Petroleum Development Company",
+        "ANTAN Producing Limited",
+        "Oando Energy Resources",
+        "Energia Limited"
       ]
     },
     {
@@ -24,7 +28,7 @@ function Clients() {
       color: "from-green-500 to-emerald-500",
       bgColor: "from-green-50 to-emerald-50",
       clients: [
-        "Guarantee Trust Bank",
+        "Guaranty Trust Bank",
         "United Bank of Africa",
         "Niger Insurance PLC",
         "National Petroleum Investment Management Services"
@@ -36,10 +40,12 @@ function Clients() {
       color: "from-blue-500 to-indigo-500",
       bgColor: "from-blue-50 to-indigo-50",
       clients: [
-        "West Africa Portland Cement Company (Lafarge)",
+        "Lafarge Africa PLC",
         "Nigeria Bottling Company PLC (Coca-Cola)",
         "Notore Chemicals Industry Limited",
-        "Ashaka Cement Company PLC (Lafarge)"
+        "Enikkom Construction Limited",
+        "Dangote Cement",
+        "Ikeja Electric Development Company"
       ]
     },
     {
@@ -105,7 +111,6 @@ function Clients() {
                   </div>
                   <div className="ml-4">
                     <h3 className="text-xl font-bold text-slate-800">{category.category}</h3>
-                    <p className="text-sm text-slate-600">{category.clients.length} clients</p>
                   </div>
                 </div>
 

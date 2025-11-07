@@ -4,13 +4,12 @@ function ContractsProfile() {
   const contractsData = [
     { client: "Niger Insurance PLC", service: "Microsoft product and License Management." },
     { client: "Toyota Nigeria", service: "Intranet Solution (Development, Maintenance support) Windows 2000/Exchange 2000 Support Retainship" },
-    { client: "Unicem - Calabar PLC", service: "Microsoft Products and License Management Services; Network Monitoring Solution." },
-    { client: "West Africa Portland Cement Company – Lafarge", service: "Cyberoam; HP Hardware sizing Supply and Support." },
+    { client: "Lafarge Africa PLC", service: "Microsoft Products and License Management Services; Network Monitoring Solution; Cyberoam; Hardware sizing Supply and Support." },
     { client: "NSL Lotteries Management Company Limited", service: "Microsoft Products and License Management Services" },
     { client: "National Petroleum Investment Management Services", service: "Microsoft Products and License Management Services; Electronic Document Management Solution; Symantec Security Solution." },
     { client: "MWEB Nigeria", service: "Microsoft Products and License Management Services; Anti-Virus Solution" },
     { client: "Aluko & Oyebode Solicitors", service: "Microsoft Products and License Management Services; Electronic Document Management Solution; Symantec Security Solution" },
-    { client: "Ashaka Cement Company PLC", service: "Microsoft Products and License Management Services" }
+    { client: "Seplat Petroleum Development Company", service: "Autodesk, Progress WhatsUp Gold and License Management Services" }
   ];
 
   return (
