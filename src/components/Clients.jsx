@@ -1,4 +1,4 @@
-import { BiBuilding, BiDollarCircle, BiCog, BiCar, BiShield, BiTv, BiGlobe } from 'react-icons/bi';
+import { BiBuilding, BiDollarCircle, BiCog, BiCar, BiShield, BiGlobe } from 'react-icons/bi';
 
 function Clients() {
   const clientCategories = [

@@ -62,7 +62,7 @@ function Header() {
         <li><button onClick={() => handleSectionNavigation('home')} className="no-underline text-gray-800 font-medium hover:text-blue-600 transition-colors bg-transparent border-none cursor-pointer">Home</button></li>
         <li><button onClick={() => handleSectionNavigation('about')} className="no-underline text-gray-800 font-medium hover:text-blue-600 transition-colors bg-transparent border-none cursor-pointer">About</button></li>
         <li><button onClick={() => handleSectionNavigation('services')} className="no-underline text-gray-800 font-medium hover:text-blue-600 transition-colors bg-transparent border-none cursor-pointer">Services</button></li>
-        <li><Link to="/team" className="no-underline text-gray-800 font-medium hover:text-blue-600 transition-colors">Team</Link></li>
+
   <li><button onClick={() => handleSectionNavigation('partners')} className="no-underline text-gray-800 font-medium hover:text-blue-600 transition-colors bg-transparent border-none cursor-pointer">Partners</button></li>
   <li className="relative" ref={dropdownRef}>
     <button 
@@ -118,7 +118,7 @@ function Header() {
             <button onClick={() => { handleSectionNavigation('home'); setShowMobileMenu(false); }} className="block text-gray-800 font-medium hover:text-blue-600 transition-colors py-2 bg-transparent border-none cursor-pointer w-full text-left">Home</button>
             <button onClick={() => { handleSectionNavigation('about'); setShowMobileMenu(false); }} className="block text-gray-800 font-medium hover:text-blue-600 transition-colors py-2 bg-transparent border-none cursor-pointer w-full text-left">About</button>
             <button onClick={() => { handleSectionNavigation('services'); setShowMobileMenu(false); }} className="block text-gray-800 font-medium hover:text-blue-600 transition-colors py-2 bg-transparent border-none cursor-pointer w-full text-left">Services</button>
-            <Link to="/team" className="block text-gray-800 font-medium hover:text-blue-600 transition-colors py-2" onClick={() => setShowMobileMenu(false)}>Team</Link>
+
             <button onClick={() => { handleSectionNavigation('partners'); setShowMobileMenu(false); }} className="block text-gray-800 font-medium hover:text-blue-600 transition-colors py-2 bg-transparent border-none cursor-pointer w-full text-left">Partners</button>
             <Link to="/clients" className="block text-gray-800 font-medium hover:text-blue-600 transition-colors py-2" onClick={() => setShowMobileMenu(false)}>All Clients</Link>
             <Link to="/contracts" className="block text-gray-800 font-medium hover:text-blue-600 transition-colors py-2" onClick={() => setShowMobileMenu(false)}>Contracts Profile</Link>

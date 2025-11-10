@@ -9,7 +9,7 @@ import Partners from './components/Partners'
 import Contact from './components/Contact'
 import ClientsPage from './components/ClientsPage'
 import ContractsProfile from './components/ContractsProfile'
-import Team from './components/Team'
+
 import Footer from './components/Footer'
 import './App.css'
 
@@ -34,7 +34,7 @@ function App() {
         <Route path="/about" element={<AboutPage />} />
         <Route path="/clients" element={<ClientsPage />} />
         <Route path="/contracts" element={<ContractsProfile />} />
-        <Route path="/team" element={<Team />} />
+
         <Route path="/services" element={<ServicesPage />} />
       </Routes>
       <Footer />
