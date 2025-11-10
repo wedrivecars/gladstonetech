@@ -30,8 +30,11 @@ function Contact() {
                 <div className="ml-4">
                   <h3 className="text-lg font-semibold text-slate-800 mb-2">Phone</h3>
                   <p className="text-slate-600 mb-2">Mon-Fri from 8am to 5pm</p>
-                  <a href="tel:+1234567890" className="text-purple-600 hover:text-purple-700 font-medium block">
+                  <a href="tel:+2348033004581" className="text-purple-600 hover:text-purple-700 font-medium block">
                     (+234) 803-300-4581
+                  </a>
+                  <a href="tel:+2348093004581" className="text-purple-600 hover:text-purple-700 font-medium block">
+                    (+234) 809-300-4581
                   </a>
                 </div>
               </div>
