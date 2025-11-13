@@ -1,10 +1,16 @@
-import { BiBuilding, BiDollarCircle, BiCog, BiCar, BiShield, BiGlobe } from 'react-icons/bi';
+import OilAndGas from '../assets/oilandgas.jpg';
+import BankingAndFinance from '../assets/banking.jpg';
+import manufacturing from '../assets/manufacturing.jpg';
+import technology from '../assets/technology.jpg';
+import logistics from '../assets/logistics.jpg';
+import other from '../assets/others.jpg';
+
 
 function Clients() {
   const clientCategories = [
     {
       category: "Oil & Gas",
-      icon: BiCog,
+      image: OilAndGas,
       color: "from-orange-500 to-red-500",
       bgColor: "from-orange-50 to-red-50",
       clients: [
@@ -24,7 +30,7 @@ function Clients() {
     },
     {
       category: "Banking & Finance",
-      icon: BiDollarCircle,
+      image: BankingAndFinance,
       color: "from-green-500 to-emerald-500",
       bgColor: "from-green-50 to-emerald-50",
       clients: [
@@ -36,7 +42,7 @@ function Clients() {
     },
     {
       category: "Manufacturing & Industrial",
-      icon: BiBuilding,
+      image: manufacturing,
       color: "from-blue-500 to-indigo-500",
       bgColor: "from-blue-50 to-indigo-50",
       clients: [
@@ -50,7 +56,7 @@ function Clients() {
     },
     {
       category: "Technology & Telecommunications",
-      icon: BiGlobe,
+      image: technology,
       color: "from-purple-500 to-pink-500",
       bgColor: "from-purple-50 to-pink-50",
       clients: [
@@ -61,7 +67,7 @@ function Clients() {
     },
     {
       category: "Logistics & Transportation",
-      icon: BiCar,
+      image: logistics,
       color: "from-teal-500 to-cyan-500",
       bgColor: "from-teal-50 to-cyan-50",
       clients: [
@@ -71,7 +77,7 @@ function Clients() {
     },
     {
       category: "Other Enterprises",
-      icon: BiShield,
+      image: other,
       color: "from-gray-500 to-slate-500",
       bgColor: "from-gray-50 to-slate-50",
       clients: [
@@ -106,11 +112,15 @@ function Clients() {
               >
                 {/* Category Header */}
                 <div className="flex items-center mb-6">
-                  <div className={`bg-linear-to-r ${category.color} p-3 rounded-xl shadow-md group-hover:scale-110 transition-transform`}>
-                    <IconComponent className="w-6 h-6 text-white" />
+                  <div className="flex-shrink-0 w-20 h-20 rounded-lg overflow-hidden border-2 border-white shadow-md">
+                    <img 
+                      src={category.image} 
+                      alt={category.category} 
+                      className="w-full h-full object-cover"
+                    />
                   </div>
-                  <div className="ml-4">
-                    <h3 className="text-xl font-bold text-slate-800">{category.category}</h3>
+                  <div className="ml-6">
+                    <h3 className="text-2xl font-bold text-slate-800">{category.category}</h3>
                   </div>
                 </div>
 
